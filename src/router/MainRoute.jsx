@@ -3,11 +3,9 @@ import Login from "../components/auth/Login";
 import Register from "../components/auth/Register";
 import HomeLayout from "../layout/HomeLayout";
 import Blogs from "../components/blogs/Blogs";
-import Footer from "../components/footer/Footer";
+import Profile from "../components/userProfile/Profile";
 import PrivateRoute from "./PrivateRoute";
 import AuthLayout from "../layout/AuthLayout";
-import { useContext } from "react";
-import { AuthContext } from "../context/authProvider/AuthProvider";
 
 const router = createBrowserRouter([
     {
@@ -17,6 +15,10 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Blogs></Blogs>
+            },
+            {
+                path:'/:user',
+                element:<Profile></Profile>
             }
         ]
     },

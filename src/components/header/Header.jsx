@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../../context/authProvider/AuthProvider";
-import useFirebase from "../../hooks/useFirbase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link,useParams } from "react-router-dom";
 
 const Header = () => {
+  let param=useParams()
+  console.log(param)
     const navigate=useNavigate()
   const authInfo = useContext(AuthContext);
   const {handleSignOut,user}=authInfo;
@@ -61,7 +62,7 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <Link to="/" className="btn btn-ghost normal-case text-xl">BLOGS</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -109,8 +110,8 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a className="justify-between">Profile</a>
+              <li >
+                <Link to={user?.displayName.split(' ')[0]} className="justify-between">Profile</Link>
               </li>
               <li>
                 <a>Settings</a>
