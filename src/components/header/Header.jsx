@@ -122,7 +122,7 @@ const Header = () => {
             </ul>
           </div>
         )}
-        <a className="btn">Create Blog</a>
+        <Link to="/create_blog" className="btn">Create Blog</Link>
       </div>
     </div>
   );

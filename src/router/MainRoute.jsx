@@ -6,6 +6,7 @@ import Blogs from "../components/blogs/Blogs";
 import Profile from "../components/userProfile/Profile";
 import PrivateRoute from "./PrivateRoute";
 import AuthLayout from "../layout/AuthLayout";
+import CreatePost from "../components/createPost/CreatePost";
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path:'/:user',
                 element:<Profile></Profile>
+            },
+            {
+                path:'/create_blog',
+                element:<CreatePost></CreatePost>
             }
         ]
     },
