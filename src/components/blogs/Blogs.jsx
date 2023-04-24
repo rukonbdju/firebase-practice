@@ -7,7 +7,7 @@ const Blogs = () => {
     useEffect(()=>{
         const fetchBlogs=async()=>{
             try{
-                const response=await fetch('http://localhost:5000/blogs');
+                const response=await fetch('https://mongobd-server-rukonbdju.vercel.app/blogs');
                 const result= await response.json();
                 setBlogs(result);
             }
